@@ -71,13 +71,13 @@ header svg {
     bottom: -2px; /* Adjust based on your design */
     left: 0;
     transform: scaleX(0);
-    transform-origin: bottom right;
+    transform-origin: right;
     transition: transform 0.4s ease;
 }
 
 .nav-items ul li:hover::after {
     transform: scaleX(1);
-    transform-origin: bottom left;
+    transform-origin: left;
 }
 
 /* Hamburger menu styles */
@@ -218,77 +218,6 @@ header svg {
     font-size: 60px;
   }
   
-  .info .button {
-    position: relative;
-    border: 3px solid white;
-    text-align: center;
-    padding: 20px 30px;
-    cursor: pointer;
-    max-width: 200px;
-    overflow: hidden; /* Ensure the pseudo-element does not overflow */
-    color: white; /* Initial text color */
-    background-color: transparent; /* Initial background color */
-    transition: color 0.4s ease;
-}
-
-.info .button::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 0; /* Ensure it appears below the text */
-    transition: none; /* Disable default transition */
-}
-
-.info .button p {
-    position: relative;
-    z-index: 1; /* Ensure text appears above the pseudo-element */
-    margin: 0;
-    transition: color 0.4s ease;
-}
-
-.info .button:hover::before {
-    top: 0;
-    animation: slideIn 0.4s forwards;
-}
-
-.info .button:hover p {
-    color: black;
-}
-
-.info .button::before {
-    animation: slideOut 0.4s forwards; /* Start with slideOut animation */
-}
-
-.info .button:hover::before {
-    animation: slideIn 0.4s forwards;
-}
-
-@keyframes slideIn {
-    from {
-        top: 100%;
-    }
-    to {
-        top: 0;
-    }
-}
-
-@keyframes slideOut {
-    from {
-        top: 0;
-    }
-    to {
-        top: 100%;
-    }
-}
-
-  .info .button p{
-    font-family: 'D-Din Bolt';
-  }
-
 /* Element | http://127.0.0.1:5500/index.html */
 
 .text > p:nth-child(1) {
@@ -587,4 +516,43 @@ p {
 .info .text h1 {
   /* font-size: 60px; */
   font-size: 45px;
+}
+
+
+.button{
+  text-align: center;
+  position: relative;
+  background: transparent;
+  cursor: pointer;
+}
+
+.button::after{
+  content: '';
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0);
+  transition: transform 0.5s ease;
+  transform-origin: top;
+  z-index: 0;
+}
+
+
+.button p{
+  position: relative;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+  transition: color 0.5s ease;
+}
+
+.button:hover::after{
+  transform: scaleY(1);
+  transform-origin: bottom;
+}
+
+.button:hover p{
+  color: black;
 }
