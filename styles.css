@@ -556,3 +556,57 @@ p {
 .button:hover p{
   color: black;
 }
+
+/* changes */
+
+/* styles.css | http://127.0.0.1:5500/styles.css */
+
+.side-bar ul li {
+  border-top: 1px solid #3c3c3c;
+  cursor: pointer;
+}
+
+/* updates from chatGPT */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-bar ul li {
+  display: none; /* Initially hide all list items */
+  opacity: 0;
+  animation: fadeInDown 0.5s forwards;
+}
+
+.side-bar ul li.show {
+  display: list-item;
+}
+
+.side-bar ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.side-bar ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.side-bar ul li:nth-child(3) {
+  animation-delay: 0.2.2s;
+}
+
+.side-bar ul li:nth-child(4) {
+  animation-delay: 0.2.5s;
+}
+
+

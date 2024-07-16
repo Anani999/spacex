@@ -70,3 +70,30 @@ window.addEventListener('scroll', () => {
     }
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 });
+
+
+// Hmaburger 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebarItems = document.querySelectorAll('.side-bar ul li');
+    const hamburgerMenu = document.querySelector('.hamburger-menu'); // Assuming you have a class for the hamburger menu
+  
+    // Function to show sidebar items with animation
+    const showSidebarItems = () => {
+      sidebarItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add('show');
+        }, index * 200); // Delay each item by 200ms
+      });
+    };
+  
+    // Function to make sidebar visible and trigger animations
+    const showSidebar = () => {
+      document.querySelector('.side-bar ul').style.display = 'block';
+      showSidebarItems();
+    };
+  
+    // Event listener for the hamburger menu click
+    hamburgerMenu.addEventListener('click', showSidebar);
+  });
+  
