@@ -1,0 +1,590 @@
+/* Reset default margin and padding */
+@font-face {
+    font-family: 'D-Din Bolt';
+    src: url('assets/fonts/D-DIN-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'D-Din';
+    src: url('assets/fonts/D-DIN.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p{
+    font-family: 'D-Din';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'D-Din Bolt' , sans-serif;
+}
+
+/* Basic styles for the header */
+header {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Logo styles */
+header svg {
+    height: 40px;
+    width: auto;
+    fill: #fff;
+}
+
+
+.head-items{
+    display: flex;
+}
+/* Navigation items */
+.nav-items ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-items ul li {
+    position: relative; /* Needed for positioning the pseudo-element */
+    margin-right: 15px;
+    font-size: 17px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.4s ease; /* Transition for text color */
+}
+
+.nav-items ul li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    bottom: -2px; /* Adjust based on your design */
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
+}
+
+.nav-items ul li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu { /* Initially hide on larger screens */
+    cursor: pointer;
+}
+
+.hamburger-slide {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-menu.active .hamburger-slide:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .hamburger-slide:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-slide:nth-child(3) {
+    transform: rotate(-45deg) translate(5px,-5px);
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 1200px) {
+    .nav-items ul {
+        display: none; /* Hide navigation items on smaller screens */
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-items ul.active {
+        display: flex; /* Show navigation items when active */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu button */
+        cursor: pointer;
+    }
+
+    header {
+        position: relative;
+    }
+}
+  
+  /* styles.css | http://127.0.0.1:5500/styles.css?_cacheOverride=1721102345881 */
+  
+  .head-items {
+    align-content: center;
+    align-items: center;
+    max-width: 70%;
+    margin: 10px auto;
+    gap: 30px;
+  }
+  
+  header svg {
+    /* height: 40px; */
+    height: 24px;
+  }
+  
+  /* Element | http://127.0.0.1:5500/index.html */
+  
+  .nav-items > ul:nth-child(1) {
+    display: flex;
+    gap: 15px;
+  }
+  
+
+/* styles.css | http://127.0.0.1:5500/styles.css?_cacheOverride=1721103700071 */
+
+.nav-items ul li {
+    /* font-size: 14px; */
+    font-size: 17px;
+  }
+  
+  /* styles.css | http://127.0.0.1:5500/styles.css?_cacheOverride=1721103853957 */
+  
+  .head-items {
+    /* align-content: center; */
+    /* align-items: center; */
+    /* max-width: 70%; */
+    /* margin: 10px auto; */
+    /* gap: 30px; */
+    align-items: baseline;
+    max-width: 85%;
+    margin: 30px auto;
+    gap: 37px;
+  }
+  
+  header svg {
+    /* height: 24px; */
+    height: 33px;
+  }
+  
+  .nav-items > ul:nth-child(1) {
+    /* gap: 15px; */
+    gap: 28px;
+    align-items: center;
+  }
+  
+
+  .container{
+    height: 100vh;
+    position: relative;
+    background-color: black;
+    background-image: url('assets/homepage/container-bg.jpg');
+  }
+
+   .info{
+    position: absolute;
+    bottom: 16%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    max-width: 35%;
+    gap: 40px;
+    color: white;
+  }
+
+  .info .text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: start;
+
+  }
+  .info .text h1{
+    font-size: 60px;
+  }
+  
+  .info .button {
+    position: relative;
+    border: 3px solid white;
+    text-align: center;
+    padding: 20px 30px;
+    cursor: pointer;
+    max-width: 200px;
+    overflow: hidden; /* Ensure the pseudo-element does not overflow */
+    color: white; /* Initial text color */
+    background-color: transparent; /* Initial background color */
+    transition: color 0.4s ease;
+}
+
+.info .button::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 0; /* Ensure it appears below the text */
+    transition: none; /* Disable default transition */
+}
+
+.info .button p {
+    position: relative;
+    z-index: 1; /* Ensure text appears above the pseudo-element */
+    margin: 0;
+    transition: color 0.4s ease;
+}
+
+.info .button:hover::before {
+    top: 0;
+    animation: slideIn 0.4s forwards;
+}
+
+.info .button:hover p {
+    color: black;
+}
+
+.info .button::before {
+    animation: slideOut 0.4s forwards; /* Start with slideOut animation */
+}
+
+.info .button:hover::before {
+    animation: slideIn 0.4s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        top: 100%;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100%;
+    }
+}
+
+  .info .button p{
+    font-family: 'D-Din Bolt';
+  }
+
+/* Element | http://127.0.0.1:5500/index.html */
+
+.text > p:nth-child(1) {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .text > h1:nth-child(2) {
+    font-size: 60px;
+   }
+   
+  /* styles.css | http://127.0.0.1:5500/styles.css?_cacheOverride=1721105725690 */
+  
+  p {
+    font-weight: bold;
+  }
+  
+  /* Element | http://127.0.0.1:5500/index.html */
+  
+  footer{
+    background-color: black;
+    padding: 30px;
+    color: white;
+  }
+
+  footer ul{
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin:0 auto;
+    gap: 20px;
+    list-style: none;
+  }
+
+  footer ul li{
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  footer .copyright{
+    font-family: 'D-Din';
+    cursor: unset;
+  }
+
+  /* Initial state of the element */
+.info {
+    opacity: 0; /* Hidden initially */
+    transform: translateY(20px); /* Move down 20px */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+/* Animation class to be added when the element is in view */
+.info.show {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.shop-item{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+
+/* styles.css | http://127.0.0.1:5500/styles.css */
+
+header svg {
+    /* height: 33px; */
+    height: 25px;
+  }
+  
+  .nav-items ul li {
+    /* font-size: 17px; */
+    font-size: 15px;
+  }
+  
+
+
+/* styles.css | http://127.0.0.1:5500/styles.css */
+
+header svg {
+    /* height: 33px; */
+    height: 25px;
+  }
+  
+  .nav-items ul li {
+    /* font-size: 17px; */
+    font-size: 15px;
+  }
+  
+  /* styles.css | http://127.0.0.1:5500/styles.css?_cacheOverride=1721121251166 */
+  
+  .container {
+    background-size: cover;
+  }
+  
+  .info {
+    /* bottom: 16%; */
+    /* left: 20%; */
+    bottom: 18%;
+    left: 17%;
+  }
+  
+  .text > p:nth-child(1) {
+    /* font-size: 25px; */
+    font-size: 22px;
+  }
+  
+  .text > h1:nth-child(2) {
+    /* font-size: 60px; */
+    font-size: 53px;
+  }
+  
+  .info .button {
+    /* border: 3px solid white; */
+    /* padding: 20px 30px; */
+    /* max-width: 200px; */
+    border: 2px solid white;
+    padding: 15px 10px;
+    max-width: 156px;
+  }
+  
+/* Initial state of the header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    transition: transform 0.4s ease-out;
+}
+
+/* Hide the header */
+header.hide {
+    transform: translateY(-100%);
+}
+
+.hamburger-menu{
+  z-index: 2;
+}
+
+.right-items{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 47px;
+  right: 20px;
+}
+
+.right-items ul{
+
+  list-style: none;
+}
+
+.right-items ul li {
+  position: relative; /* Needed for positioning the pseudo-element */
+  margin-right: 15px;
+  font-size: 17px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.4s ease; /* Transition for text color */
+}
+
+.right-items ul li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  bottom: -2px; /* Adjust based on your design */
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+}
+
+.right-items ul li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Sidebar initial state */
+.side-bar {
+  position: fixed;
+  top: 0;
+  right: -200px; /* Start off-screen */
+  height: 100%;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  width: 200px;
+  transition: right 0.5s ease; /* Smooth slide-in animation */
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Sidebar shown state */
+.side-bar.show {
+  right: 0; /* Slide into view */
+}
+
+/* Sidebar list items */
+.side-bar ul {
+  font-size: 14px;
+  list-style: none;
+  margin: 30% 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.side-bar ul li {
+  padding: 10px;
+  width: 100%;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly above */
+  animation: slideIn 0.5s forwards ease; /* Slide in animation */
+  animation-delay: var(--delay); /* Delay based on item index */
+}
+
+.side-bar ul li:hover {
+  color: rgb(233, 233, 233);
+  background-color: black;
+}
+
+/* Slide in animation for list items */
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px); /* Start slightly below */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); /* Move to original position */
+  }
+}
+
+/* chnages 5 */
+
+/* styles.css | http://127.0.0.1:5500/styles.css */
+
+.nav-items ul li {
+  /* font-size: 15px; */
+  font-size: 17px;
+  font-size: 13px;
+}
+
+.text > p:nth-child(1) {
+  /* font-weight: bold; */
+}
+
+p {
+  /* font-weight: bold; */
+}
+
+.text > h1:nth-child(2) {
+  /* font-size: 53px; */
+  font-size: 45px;
+}
+
+.info .button {
+  /* max-width: 156px; */
+  max-width: 126px;
+}
+
+/* Element | http://127.0.0.1:5500/index.html# */
+
+#container > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > p:nth-child(1) {
+  font-size: 13px;
+}
+
+
+/* adjustment 6 */
+
+/* styles.css | http://127.0.0.1:5500/styles.css?_cacheOverride=1721127960524 */
+
+.right-items ul li {
+  font-size: 13px;
+}
+
+.hamburger-slide {
+  /* width: 25px; */
+  /* height: 3px; */
+  width: 19px;
+  height: 2px;
+}
+
+.info .button p{
+  font-size: 13px;
+}
+
+
+/* styles.css | http://127.0.0.1:5500/styles.css */
+
+.info .text h1 {
+  /* font-size: 60px; */
+  font-size: 45px;
+}
