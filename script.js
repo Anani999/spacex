@@ -97,3 +97,17 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburgerMenu.addEventListener('click', showSidebar);
   });
   
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+  
+    const changeHeaderBg = () => {
+      if (window.scrollY >= window.innerHeight) {
+        header.style.backgroundColor = 'black';
+      } else {
+        header.style.backgroundColor = 'transparent';
+      }
+    };
+  
+    window.addEventListener('scroll', changeHeaderBg);
+  });
+  
